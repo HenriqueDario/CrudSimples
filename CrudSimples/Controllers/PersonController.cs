@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace CrudSimples.Controllers
 {
-    public class HomeController : Controller
+    public class PersonController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<PersonController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public PersonController(ILogger<PersonController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult List()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Register()
         {
             return View();
         }
