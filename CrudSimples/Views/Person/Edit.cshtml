@@ -3,11 +3,11 @@
         type="text/javascript"></script>
 
 @{
-    ViewData["Title"] = "Cadastro";
+    ViewData["Title"] = "Editar";
 }
 <h1>@ViewData["Title"]</h1>
 
-<form action="Register" method="post">
+<form action="Edit" method="post">
     <div class="form-group">
         <label for="Name">Nome</label>
         <input type="text" class="form-control" id="Name" aria-describedby="Name">
@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
         <label for="RG">RG</label>
-        <input type="text" onkeydown="fMasc(this, mRG);" class="form-control" id="RG" aria-describedby="RG"maxlength="12">
+        <input type="text" onkeydown="fMasc(this, mRG);" class="form-control" id="RG" aria-describedby="RG" maxlength="12">
     </div>
     <div class="form-group">
         <label for="Email">Email</label>
@@ -32,6 +32,8 @@
         <label for="Nationality">Nacionalidade</label>
         <input type="tel" class="form-control" id="Nationality">
     </div>
-
+    <div class="form-group">
+        <input type="hidden" class="form-control" id="PersonId" value="">
+    </div>
     <button type="submit" class="btn btn-success">Cadastrar</button>
 </form>

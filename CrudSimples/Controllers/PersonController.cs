@@ -23,8 +23,31 @@ namespace CrudSimples.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Register()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Register")]
+        public IActionResult RegisterPost()
+        {
+            Console.WriteLine("foi");
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public IActionResult EditPost()
+        {
+            Console.WriteLine("foi");
             return View();
         }
 
