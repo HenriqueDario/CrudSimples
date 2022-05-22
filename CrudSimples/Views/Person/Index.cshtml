@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CrudSimples.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="margin: 0 auto 0 auto">Listagem de pessoas</h1>
+
+<br />
+<form asp-action="Create" method="get">
+    <button type="submit" class="btn btn-success">Adicionar novo</button>
+</form>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nacionalidade)
+            </th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nacionalidade)
+                </td>
+                <td>
+                    <form asp-action="Edit" asp-route-id="@item.Id" method="get">
+                        <button type="submit" class="btn btn-success">Editar</button>
+                    </form>
+                </td>
+                <td>
+
+                    <form asp-action="Details" asp-route-id="@item.Id" method="get">
+                        <button type="submit" class="btn btn-primary">Detalhes</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@item.Id" method="get">
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

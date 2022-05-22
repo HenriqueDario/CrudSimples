@@ -1,17 +1,18 @@
 ﻿@model CrudSimples.Models.Person
 <script src='<%=ResolveClientUrl("~/js/site.js") %>'
         type="text/javascript"></script>
+
 @{
-    ViewData["Title"] = "Editar";
+    ViewData["Title"] = "Cadastro";
 }
 
-<h1>Editar</h1>
+<h1>Cadastro de pessoa</h1>
+
 <hr />
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
@@ -43,7 +44,7 @@
                 <span asp-validation-for="Nacionalidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Editar" class="btn btn-success" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
             </div>
         </form>
     </div>
